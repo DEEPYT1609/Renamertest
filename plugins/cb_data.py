@@ -32,10 +32,10 @@ async def doc(bot,update):
      new_filename = new_name.split(":-")[1]
      file_path = f"downloads/{new_filename}"
      file = update.message.reply_to_message
-     ms = await update.message.edit("⚠️__**Please wait...**__\n__Downloading file to my server...__")
+     ms = await update.message.edit("ғɪʟᴇ ᴅᴏᴡɴʟᴏᴀᴅɪɴɢ sᴛᴀʀᴛ....")
      c_time = time.time()
      try:
-     	path = await bot.download_media(message = file, progress=progress_for_pyrogram,progress_args=( "\n⚠️__**Please wait...**__\n\n😈 **Hack in progress...**",  ms, c_time   ))
+     	path = await bot.download_media(message = file, progress=progress_for_pyrogram,progress_args=( "ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ ᴅᴏᴡɴʟᴀᴏᴀᴅ ғɪʟᴇ......",  ms, c_time   ))
      except Exception as e:
      	await ms.edit(e)
      	return 
@@ -72,7 +72,7 @@ async def doc(bot,update):
          img = Image.open(ph_path)
          img.resize((320, 320))
          img.save(ph_path, "JPEG")
-     await ms.edit("⚠️__**Please wait...**__\n__Processing file upload....__")
+     await ms.edit("ғɪʟᴇ ᴜᴘʟᴏᴀᴅɪɴɢ sᴛᴀʀᴛ....")
      c_time = time.time() 
      try:
         if type == "document":
@@ -82,7 +82,7 @@ async def doc(bot,update):
                     thumb=ph_path, 
                     caption=caption, 
                     progress=progress_for_pyrogram,
-                    progress_args=( "⚠️__**Please wait...**__\n__Processing file upload....__",  ms, c_time   ))
+                    progress_args=( "ғɪʟᴇ ᴜᴘʟᴏᴀᴅɪɴɢ sᴛᴀʀᴛ....",  ms, c_time   ))
         elif type == "video": 
             await bot.send_video(
 		    update.message.chat.id,
@@ -91,7 +91,7 @@ async def doc(bot,update):
 		    thumb=ph_path,
 		    duration=duration,
 		    progress=progress_for_pyrogram,
-		    progress_args=( "⚠️__**Please wait...**__\n__Processing file upload....__",  ms, c_time))
+		    progress_args=( "ғɪʟᴇ ᴜᴘʟᴏᴀᴅɪɴɢ sᴛᴀʀᴛ....",  ms, c_time))
         elif type == "audio": 
             await bot.send_audio(
 		    update.message.chat.id,
@@ -100,7 +100,7 @@ async def doc(bot,update):
 		    thumb=ph_path,
 		    duration=duration,
 		    progress=progress_for_pyrogram,
-		    progress_args=( "⚠️__**Please wait...**__\n__Processing file upload....__",  ms, c_time   )) 
+		    progress_args=( "ғɪʟᴇ ᴜᴘʟᴏᴀᴅɪɴɢ sᴛᴀʀᴛ....",  ms, c_time   )) 
      except Exception as e: 
          await ms.edit(f" Erro {e}") 
          os.remove(file_path)
