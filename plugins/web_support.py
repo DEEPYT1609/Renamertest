@@ -19,7 +19,8 @@ async def status(request):
     uptime = time() - boot_time()
     sent = net_io_counters().bytes_sent
     recv = net_io_counters().bytes_recv
-    txt = "uptime": uptime,"on_time": bot_uptime,"free_disk": disk_usage('.').free,"total_disk": disk_usage('.').total,"network": {"sent": sent,"recv": recv}
+    print(bot_uptime)
+    txt = "on_time": bot_uptime,"free_disk": disk_usage('.').free,"total_disk": disk_usage('.').total,"network": {"sent": sent,"recv": recv}
     return web.json_response(text=txt)
 
 
