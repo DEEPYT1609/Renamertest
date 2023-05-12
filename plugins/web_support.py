@@ -15,21 +15,7 @@ async def root_route_handler(request):
 
 @route.get('/status', allow_head=True)
 async def status(request):
-    bot_uptime = time() - botStartTime
-    uptime = time() - boot_time()
-    sent = net_io_counters().bytes_sent
-    recv = net_io_counters().bytes_recv
-    return web.json_response(
-        'uptime': uptime,
-        'on_time': bot_uptime,
-        'free_disk': disk_usage('.').free,
-        'total_disk': disk_usage('.').total,
-        'network': 
-        {
-            'sent': sent,
-            'recv': recv
-        }
-    )
+    return web.json_response("uptime": time() - boot_time(),"on_time": time() - botStartTime,"free_disk": disk_usage('.').free,"total_disk": disk_usage('.').total,"network": {"sent": net_io_counters().bytes_sent,"recv": net_io_counters().bytes_recv})
 
 
 async def web_server():
